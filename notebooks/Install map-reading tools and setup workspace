@@ -1,0 +1,15 @@
+# Install the geographic packages needed to read your shapefiles and rasters
+!pip install geopandas rasterio matplotlib numpy pandas seaborn scikit-learn --quiet
+
+import os
+import shutil
+import numpy as np
+import pandas as pd
+import geopandas as gpd
+import rasterio
+from rasterio.plot import show
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.metrics import roc_curve, auc
+
+print(" GIS pipeline tools are fully initialized and ready!")
