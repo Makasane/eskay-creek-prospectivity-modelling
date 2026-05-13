@@ -1,0 +1,32 @@
+import os
+import numpy as np
+import geopandas as gpd
+import rasterio
+import matplotlib.pyplot as plt
+
+raster_path = "/content/area_mag.asc"
+vms_path = "/content/vms_kuruko - Copy.shp"
+
+with rasterio.open(raster_path) as src:
+    raster_array = src.read(1)
+    raster_array = np.where(raster_array == src.nodata, np.nan, raster_array)
+    extent = [src.bounds.left, src.bounds.right, src.bounds.bottom, src.bounds.top]
+    
+    fig, ax = plt.subplots(figsize=(12, 10), dpi=200)
+    im = ax.imshow(raster_array, cmap='jet', extent=extent, interpolation='none', origin='upper')
+    ax.set_aspect('equal')
+    cbar = fig.colorbar(im, ax=ax, shrink=0.7)
+    cbar.set_label('Magnetic Intensity Gradient', fontsize=11)
+    
+    vms_data = gpd.read_file(vms_path)
+    vms_data.plot(ax=ax, color='white', edgecolor='black', linewidth=1.5, marker='^', markersize=90, label='VMS Deposit')
+    
+    plt.title('High-Resolution Spatial Integration: Deposits vs. Magnetics', fontsize=14, fontweight='bold')
+    plt.xlabel('Easting (m)', fontsize=11)
+    plt.ylabel('Northing (m)', fontsize=11)
+    plt.grid(True, linestyle=':', alpha=0.6)
+    plt.legend(loc='lower left')
+    
+    os.makedirs('/content/github_portfolio/assets/images', exist_ok=True)
+    plt.savefig('/content/github_portfolio/assets/images/map_airborne_magnetic.png', bbox_inches='tight', dpi=300)
+    plt.show()
