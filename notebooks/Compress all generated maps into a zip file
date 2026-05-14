@@ -1,0 +1,3 @@
+# Package everything into a downloadable compression module file
+shutil.make_archive('/content/eskay_creek_portfolio_assets', 'zip', '/content/github_portfolio')
+print("📦 Portfolio optimization layout completed! File written to: /content/eskay_creek_portfolio_assets.zip")
