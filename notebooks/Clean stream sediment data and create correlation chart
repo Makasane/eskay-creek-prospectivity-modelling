@@ -1,0 +1,19 @@
+ssd_path = "/content/area_ssd - Copy.shp"
+ssd_data = gpd.read_file(ssd_path)
+
+# Comprehensive tracking array variables
+all_numeric_variables = ['PH', 'AG', 'AS_', 'AU', 'BA', 'CO', 'CU', 'FE', 'HG', 'MN', 'MO', 'NI', 'PB', 'SB', 'U', 'ZN', 'NUMBER']
+final_numeric_df = ssd_data[all_numeric_variables].apply(pd.to_numeric, errors='coerce').dropna()
+complete_matrix = final_numeric_df.corr()
+
+plt.figure(figsize=(15, 12), dpi=200)
+sns.heatmap(complete_matrix, annot=True, cmap='coolwarm', vmin=-1, vmax=1, fmt=".2f", 
+            linewidths=0.8, annot_kws={"size": 8, "weight": "bold"}, cbar_kws={'label': 'Pearson Correlation Coefficient (r)'})
+
+plt.title('Complete 17-Variable Geochemical Correlation Matrix Ledger\n(Eskay Creek Exploration Field Data Archive)', fontsize=14, fontweight='bold', pad=20)
+plt.xticks(rotation=45, ha='right', fontsize=10)
+plt.yticks(rotation=0, fontsize=10)
+plt.tight_layout()
+
+plt.savefig('/content/github_portfolio/assets/images/comprehensive_element_heatmap.png', bbox_inches='tight', dpi=300)
+plt.show()
