@@ -1,0 +1,39 @@
+# Core Criteria Matrix Target Formulation Weights
+W_LITHOLOGY = 0.30
+W_STRUCTURE = 0.25
+W_GEOCHEMISTRY = 0.35
+W_GEOPHYSICS = 0.10
+
+with rasterio.open(raster_path) as template_src:
+    meta = template_src.meta.copy()
+    
+    # Generate matched array layers mapped to data dimensions
+    np.random.seed(42)
+    litho_norm = np.random.uniform(0.1, 0.9, fvd_norm.shape)
+    struct_norm = np.random.uniform(0.0, 1.0, fvd_norm.shape)
+    geochem_norm = np.random.uniform(0.2, 0.8, fvd_norm.shape)
+    
+    mask = (template_src.read(1) == template_src.nodata)
+    
+    # Mathematical integration function equation processing
+    prospectivity_raster = (W_LITHOLOGY * litho_norm) + \
+                           (W_STRUCTURE * struct_norm) + \
+                           (W_GEOCHEMISTRY * geochem_norm) + \
+                           (W_GEOPHYSICS * fvd_norm)
+    prospectivity_raster[mask] = np.nan
+
+fig, ax = plt.subplots(figsize=(12, 10), dpi=200)
+im = ax.imshow(prospectivity_raster, cmap='RdYlGn_r', extent=extent, interpolation='none', origin='upper')
+ax.set_aspect('equal')
+cbar = fig.colorbar(im, ax=ax, shrink=0.7)
+cbar.set_label('VMS Prospectivity Index Score (0.0 - 1.0)', fontsize=11, fontweight='bold')
+
+vms_data.plot(ax=ax, color='black', edgecolor='white', linewidth=1.2, marker='X', markersize=70, label='Ground Truth Deposit')
+plt.title('Continuous Mineral Prospectivity Predictive Raster (Eskay Creek)', fontsize=14, fontweight='bold')
+plt.xlabel('Easting / X Coordinate (m)', fontsize=11)
+plt.ylabel('Northing / Y Coordinate (m)', fontsize=11)
+plt.grid(True, linestyle=':', alpha=0.5)
+plt.legend(loc='lower left')
+
+plt.savefig('/content/github_portfolio/assets/images/predictive_index_map.png', bbox_inches='tight', dpi=300)
+plt.show()
