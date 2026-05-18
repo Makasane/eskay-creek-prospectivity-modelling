@@ -4,7 +4,7 @@
 
 ---
 
-##  1. Project Overview & Objective
+## 1. Project Overview & Objective
 
 This repository contains the data workflow, spatial logic, and predictive model built to identify volcanic-hosted massive sulfide (VMS) exploration targets in the Eskay Creek area (Stikine Terrane, British Columbia). The goal of the project was to take diverse geological, geochemical, and geophysical datasets and integrate them into a unified spatial framework to highlight high-probability mineralization zones.
 
@@ -12,14 +12,14 @@ The final model achieved a **0.935 ROC-AUC accuracy rating** when validated agai
 
 ---
 
-##  2. Core Technical Stack
-- **GIS & Mapping Environments:** ArcGIS Pro / QGIS
-- **Programming Engine:** Python 3.10+ (Pandas, NumPy, Scikit-Learn)
-- **Data Formats Handled:** Vector shapefiles (lithology, faults), raster grids (magnetic/gravity geophysics), and point datasets (geochemical assays)
+## 2. Core Technical Stack
+* **GIS & Mapping Environments:** ArcGIS Pro / QGIS
+* **Programming Engine:** Python 3.10+ (Pandas, NumPy, Scikit-Learn)
+* **Data Formats Handled:** Vector shapefiles (lithology, faults), raster grids (magnetic/gravity geophysics), and point datasets (geochemical assays)
 
 ---
 
-##  3. Spatial Data Integration & Weighting Framework
+## 3. Spatial Data Integration & Weighting Framework
 
 To build the predictive target map, exploration criteria were standardized and combined using a multi-criteria decision process. The model applies specific percentage weights based on geological control factors:
 
@@ -30,18 +30,32 @@ To build the predictive target map, exploration criteria were standardized and c
 
 ---
 
-##  4. Model Evaluation & Performance
+## 4. Model Evaluation, Visuals & Research Assets
 
-The mathematical validity of the final prospectivity layout was tested using a **Receiver Operating Characteristic (ROC)** curve evaluation:
-- The resulting **0.935 Area Under the Curve (AUC)** score indicates an exceptionally high rate of true-positive target identification.
-- The model successfully concentrates the majority of known mineral occurrences within narrow, high-probability search areas, proving the spatial logic is reliable for fieldwork exploration planning.
+### Academic Research Paper Link
+> **[CLICK HERE TO OPEN THE FULL RESEARCH PAPER PDF](Research/Eskay_Creek_Research_Paper.pdf)**
 
 ---
 
-##  5. Repository Structure & Navigation
- `Research/` — Contains the complete academic text elements supporting this project.
-   `Abstract.txt` — Quick summaries of the geological setting and multi-criteria overlay parameters.
-   `Eskay_Creek_Research_Paper.pdf` - The full, verified honors research paper text.
- `notebooks/` - Jupyter Notebook scripts containing data processing, data scaling, and performance plotting code.
- `data/` - Boundary metadata, spatial grid references, and core coordinate settings (NAD83 UTM Zone 9N).
- `visuals/` - High-resolution exported final target maps, IDW pathfinder grid panels, and performance charts.
+### Final Exploration Prospectivity Target Map
+Below is the final predictive target zone map showing high-probability resource targets based on the integrated multi-criteria geological weights:
+
+![Final Prospectivity Target Map](visuals/final_map.png)
+
+---
+
+### Model Validation Performance (ROC Curve)
+The mathematical validity of the final prospectivity layout was tested using a Receiver Operating Characteristic (ROC) curve evaluation. The resulting **0.935 Area Under the Curve (AUC)** score indicates an exceptionally high rate of true-positive target identification.
+
+![ROC-AUC Performance Curve](visuals/roc_curve.png)
+
+---
+
+## 5. Repository Structure & Navigation
+* `Research/` : Contains the complete academic text elements supporting this project.
+  * `Abstract.txt` : Quick summaries of the geological setting and multi-criteria overlay parameters.
+  * `Eskay_Creek_Research_Paper.pdf` : The full, verified honors research paper text.
+* `notebooks/` : Jupyter Notebook scripts containing data processing, data scaling, and performance plotting code.
+* `data/` : Boundary metadata, spatial grid references, and core coordinate settings (NAD83 UTM Zone 9N).
+* `visuals/` : High-resolution exported final target maps, IDW pathfinder grid panels, and performance charts.
+
