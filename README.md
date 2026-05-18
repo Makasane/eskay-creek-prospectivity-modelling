@@ -38,7 +38,7 @@ Prior to running the weighted integration overlays, a multi-element Pearson corr
 ## 4. Model Evaluation, Visuals & Research Assets
 
 ### Academic Research Paper Link
-> **[CLICK HERE TO OPEN THE FULL RESEARCH PAPER PDF](Tsakani Makasane Research.pdf)**
+> **[CLICK HERE TO OPEN THE FULL RESEARCH PAPER PDF](Eskay_Creek_Research_Paper.pdf)**
 
 ---
 
@@ -57,7 +57,7 @@ The mathematical validity of the final prospectivity layout was tested using a R
 ---
 
 ## 5. Repository Structure & Navigation
-* `Tsakani Makasane Research.pdf` : The full, verified honors research paper text hosted in the root folder.
+* `Eskay_Creek_Research_Paper.pdf` : The full, verified honors research paper text hosted in the root folder.
 * `notebooks/` : Jupyter Notebook scripts containing data processing, data scaling, and performance plotting code.
 * `data/` : Boundary metadata, spatial grid references, and core coordinate settings (NAD83 UTM Zone 9N).
 * `visuals/` : High-resolution exported final target maps, IDW pathfinder grid panels, and performance charts.
