@@ -1,6 +1,6 @@
 # Eskay Creek VMS Mineral Prospectivity Modelling
 > GIS-based quantitative predictive mapping using Python and spatial data integration.
-> **Academic Research Project — BSc Honours (Geology), University of the Free State**
+> **Academic Research Project - BSc Honours (Geology), University of the Free State**
 
 ---
 
