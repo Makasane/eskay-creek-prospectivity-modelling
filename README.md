@@ -33,6 +33,7 @@ Prior to running the weighted integration overlays, a multi-element Pearson corr
 
 ![Multi-Element Geochemical Correlation Matrix](visuals/comprehensive_element_heatmap.png)
 
+---
 
 ## 4. Model Evaluation, Visuals & Research Assets
 
