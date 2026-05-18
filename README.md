@@ -28,7 +28,11 @@ To build the predictive target map, exploration criteria were standardized and c
 * **Structural Control (25% Weight):** Applied proximity distance buffers around localized fault lines and structural lineaments to capture prime paleofluid pathway vectors.
 * **Geophysics (10% Weight):** Reclassified airborne residual gravity grids and magnetic intensity charts to account for hidden subsurface density and structural anomalies.
 
----
+### Data Audit Execution Matrix
+Prior to running the weighted integration overlays, a multi-element Pearson correlation check was executed to map the structural relationships and chemical synergies across all 17 pathfinder attributes:
+
+![Multi-Element Geochemical Correlation Matrix](visuals/comprehensive_element_heatmap.png)
+
 
 ## 4. Model Evaluation, Visuals & Research Assets
 
