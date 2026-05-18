@@ -33,29 +33,26 @@ To build the predictive target map, exploration criteria were standardized and c
 ## 4. Model Evaluation, Visuals & Research Assets
 
 ### Academic Research Paper Link
-> **[CLICK HERE TO OPEN THE FULL RESEARCH PAPER PDF](Research/Eskay_Creek_Research_Paper.pdf)**
+> **[CLICK HERE TO OPEN THE FULL RESEARCH PAPER PDF](Tsakani Makasane Research.pdf)**
 
 ---
 
 ### Final Exploration Prospectivity Target Map
 Below is the final predictive target zone map showing high-probability resource targets based on the integrated multi-criteria geological weights:
 
-![Final Prospectivity Target Map](visuals/final_map.png)
+![Final Prospectivity Target Map](visuals/predictive_index_map.png)
 
 ---
 
 ### Model Validation Performance (ROC Curve)
 The mathematical validity of the final prospectivity layout was tested using a Receiver Operating Characteristic (ROC) curve evaluation. The resulting **0.935 Area Under the Curve (AUC)** score indicates an exceptionally high rate of true-positive target identification.
 
-![ROC-AUC Performance Curve](visuals/roc_curve.png)
+![ROC-AUC Performance Curve](visuals/roc_validation_curve.png)
 
 ---
 
 ## 5. Repository Structure & Navigation
-* `Research/` : Contains the complete academic text elements supporting this project.
-  * `Abstract.txt` : Quick summaries of the geological setting and multi-criteria overlay parameters.
-  * `Eskay_Creek_Research_Paper.pdf` : The full, verified honors research paper text.
+* `Tsakani Makasane Research.pdf` : The full, verified honors research paper text hosted in the root folder.
 * `notebooks/` : Jupyter Notebook scripts containing data processing, data scaling, and performance plotting code.
 * `data/` : Boundary metadata, spatial grid references, and core coordinate settings (NAD83 UTM Zone 9N).
 * `visuals/` : High-resolution exported final target maps, IDW pathfinder grid panels, and performance charts.
-
